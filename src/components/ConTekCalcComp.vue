@@ -16,11 +16,16 @@ computed:
 -->
 
 <template>
-	<div></div>
+	<div>
+		<form>
+			<input type="text" />
+		</form>
+	</div>
 </template>
 
 <script>
 export default {
+	name: 'con-tek-calc-comp',
 	data() {
 		return {
 			newJob: {
@@ -28,35 +33,38 @@ export default {
 				numberInCrew: 1,
 				hoursPerDay: 1,
 				numberOfDays: 1,
-				hourlyWage: 1.00,
-                squareFootage: 1,
+				hourlyWage: 1.0,
+				squareFootage: 1,
 				otherCosts: {
-					materials: 0.00,
-					travel: 0.00,
+					materials: 0.0,
+					travel: 0.0,
 				},
 			},
 		};
 	},
 	computed: {
 		totalJobHours() {
-			const result = this.newJob.numberInCrew.toFixed(2) * this.newJob.hoursPerDay.toFixed(2) * this.newJob.numberOfDays.toFixed(2);
-            return result.toFixed(2);
+			const result =
+				this.newJob.numberInCrew.toFixed(2) *
+				this.newJob.hoursPerDay.toFixed(2) *
+				this.newJob.numberOfDays.toFixed(2);
+			return result.toFixed(2);
 		},
-        totalJobLabor() {
-            const result = this.totalJobHours() * this.newJob.hourlyWage.toFixed(2);
-            return result.toFixed(2);
-        },
-        totalJobCost() {
-            const totalOtherCosts = this.newJob.otherCosts.reduce( (total, cost) => {
-                return total + cost;
-            });
-            const result = this.totalJobLabor() + totalOtherCosts.toFixed(2);
-            return result.toFixed(2);
-        },
-        squareFootCost() {
-            const result = this.totalJobCost() / this.newJob.squareFootage;
-            return result.toFixed(2);
-        }
+		totalJobLabor() {
+			const result = this.totalJobHours() * this.newJob.hourlyWage.toFixed(2);
+			return result.toFixed(2);
+		},
+		totalJobCost() {
+			const totalOtherCosts = this.newJob.otherCosts.reduce((total, cost) => {
+				return total + cost;
+			});
+			const result = this.totalJobLabor() + totalOtherCosts.toFixed(2);
+			return result.toFixed(2);
+		},
+		squareFootCost() {
+			const result = this.totalJobCost() / this.newJob.squareFootage;
+			return result.toFixed(2);
+		},
 	},
 	methods: {},
 };
