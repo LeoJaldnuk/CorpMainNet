@@ -8,7 +8,7 @@
 import ConTekCalcComp from '../components/ConTekCalcComp.vue'
 
 export default {
-    name: 'con-tek-comp',
+    name: 'con-tek-calc',
     components: {
         ConTekCalcComp
     }
