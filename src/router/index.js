@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import ConTekCalcView from '../views/ConTekCalcView.vue'
+import ConTekCalcView from '../views/ConTekCalcView.vue'
 
 Vue.use(Router)
 

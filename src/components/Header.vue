@@ -1,6 +1,7 @@
 <template>
   <div>
-    <router-link :to="{ name: 'con-tek-comp' }"></router-link>
+    <router-link :to="{ name: 'home' }">Home | </router-link>
+    <router-link :to="{ name: 'con-tek-comp' }">ConTek Job Calculator</router-link>
   </div>
 </template>
 

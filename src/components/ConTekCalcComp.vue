@@ -18,7 +18,23 @@ computed:
 <template>
 	<div>
 		<form>
-			<input type="text" />
+			<input class="input-box" placeholder="Name of the Job" type="text" v-model="newJob.nameOfJob" />
+			<input class="input-box" placeholder="Number in the Crew" type="number" v-model="newJob.numberInCrew" />
+			<input class="input-box" placeholder="Hours Per Day" type="number" v-model="newJob.hoursPerDay" />
+			<input class="input-box" placeholder="Number of Days" type="number" v-model="newJob.numberOfDays" />
+			<p>Calculated Total Job Hours:  {{ totalJobHours }}</p>
+
+			<input class="input-box" placeholder="Hourly Wage" type="number" v-model="newJob.hourlyWage" />
+
+			<p>Calculated Total Job Labor Cost:  {{ totalJobLabor }}</p>
+			<input class="input-box" placeholder="Total Job Square Footage" type="number" v-model="newJob.squareFootage" />
+
+
+
+			<p>Total Job Cost:  {{ totalJobCost }}</p>
+
+			<p>Calculated Square Foot Cost:  {{ squareFootCost }}</p>
+
 		</form>
 	</div>
 </template>
@@ -40,6 +56,7 @@ export default {
 					travel: 0.0,
 				},
 			},
+			
 		};
 	},
 	computed: {
@@ -66,9 +83,22 @@ export default {
 			return result.toFixed(2);
 		},
 	},
-	methods: {},
+	methods: {
+		addOtherCost() {
+			
+		}
+	},
 };
 </script>
 
 <style>
+
+input-box {
+	margin: 3px;
+}
+
+input-button {
+	margin: 5px;
+}
+
 </style>
