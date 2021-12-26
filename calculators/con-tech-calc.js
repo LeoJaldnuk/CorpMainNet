@@ -1,3 +1,9 @@
+<template>
+  <div>
+  
+  </div>
+</template>
+
 // data()
 // newJob: {
 //   nameOfJob: "",

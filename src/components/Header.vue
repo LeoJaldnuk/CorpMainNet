@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="{ name: "con-tek-calc" }"></router-link>
+    <router-link :to="{ name: 'con-tek-comp' }"></router-link>
   </div>
 </template>
 
